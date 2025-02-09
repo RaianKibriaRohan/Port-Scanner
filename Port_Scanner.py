@@ -1,17 +1,16 @@
-#!/usr/bin/env python3
 #Use these commands in Kali to install required software:
 #  sudo apt install python3-pip
 #  pip install python-nmap
 
+#======================================
+
 # Import nmap so we can use it for the scan
 import nmap
-# We need to create regular expressions to ensure that the input is correctly formatted.
+# re means regular expressions to ensure that the input is correctly formatted.
 import re
 
-# Regular Expression Pattern to recognise IPv4 addresses.
+# Pattern of IPv4 addresses.
 ip_add_pattern = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
-# Regular Expression Pattern to extract the number of ports you want to scan. 
-# You have to specify <lowest_port_number>-<highest_port_number> (ex 10-100)
 port_range_pattern = re.compile("([0-9]+)-([0-9]+)")
 # Initialising the port numbers, will be using the variables later on.
 port_min = 0
